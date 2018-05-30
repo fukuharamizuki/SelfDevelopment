@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <!-- Required meta tags -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="./css/bootstrap.min.css">
+
+   <meta charset="UTF-8">
+	 <title>商品詳細情報</title>
+
+</head>
+<body>
+<div class="container">
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-md-5">
+      <img src="picture/classicTutu-1.jpg" width="100%" height="100%">
+    </div>
+    <div class="col-md-7">
+      <p><font size="5">-red 001-</font></p>
+      <br>
+      <p><font size="4">レンタル　¥40,000　　購入　¥200,000</font></p>
+      <br>
+      <p><font size="4">サイズ　S・M・L</font></p>
+      <br>
+      <p><font size="4">演目　スワニルダ、町娘etc</font></p>
+      <br>
+      <p><font size="3">サイズ表</font></p>
+      <table class="table table-sm">
+        <thead>
+          <tr>
+            <th>サイズ</th>
+            <th>身長</th>
+            <th>バスト</th>
+            <th>ウエスト</th>
+            <th>ヒップ</th>
+            <th>背丈</th>
+          </th>
+        </thead>
+        <tbody>
+          <tr>
+            <th>S</th>
+            <th>148-155</th>
+            <th>80</th>
+            <th>60</th>
+            <th>83</th>
+            <th>36</th>
+          </tr>
+          <tr>
+            <th>M</th>
+            <th>150-160</th>
+            <th>83</th>
+            <th>63</th>
+            <th>87</th>
+            <th>38</th>
+          </tr>
+          <tr>
+            <th>L</th>
+            <th>160-165</th>
+            <th>85</th>
+            <th>66</th>
+            <th>90</th>
+            <th>40</th>
+          </tr>
+        </tbody>
+      </table>
+      <form method="#" action="addCart.html">
+        <p>
+          size　　<input type="text" required name="size" list="size">
+          <datalist id="size">
+            <option value="S"></option>
+            <option value="M"></option>
+            <option value="L"></option>
+          </datalist>
+          数量　　<input type="number" name="qty" min="1" max="100" value="0">
+          購入方法　　<input type="text" required name="buytype" list="buytype">
+          <datalist id="buytype">
+            <option value="レンタル"></option>
+            <option value="購入"></option>
+          </datalist>
+        </p>
+        <div align="right">
+          <button type="submit" class="btn btn-info">カートへ</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+
+</div>
+</body>
+</html>

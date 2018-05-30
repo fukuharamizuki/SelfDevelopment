@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <!-- Required meta tags -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="./css/bootstrap.min.css">
+   <link rel="stylesheet" href="./css/original/common2.css">
+
+<meta charset="UTF-8">
+<title>商品リスト</title>
+</head>
+<body>
+<div class="container">
+  <br>
+  <br>
+    <p><center><font size="6">商品リスト</font></center></p>
+
+  <br>
+  <br>
+  <div align="right"><a href="masterCreateItem.html" class="btn btn-outline-warning">商品登録</a></div>
+
+  <div class="input-area2">
+  <form>
+    <div class="form-group row">
+      <label for="inputItem" class="col-sm-4 col-form-label">商品名</label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control" id="inputEmail3" placeholder="">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputSize" class="col-sm-4 col-form-label">サイズ</label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control" id="inputSize" placeholder="">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputPrice" class="col-sm-4 col-form-label">価格</label>
+      <div class="col-sm-8">
+        <input type="number" class="form-control" id="inputPrice" placeholder="">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputData" class="col-sm-4 col-form-label">詳細</label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control" id="inputData" placeholder="">
+      </div>
+    </div>
+    <br><br>
+    <center><button type="action" class="btn btn-warning btn-lg">　検索　</button></center>
+　</form>
+  </div>
+  <br>
+  <br>
+  <table class="table table-bordered">
+    <thead>
+        <tr class="bg-warning text-white">
+            <th><center>商品名</center></th>
+            <th><center>サイズ</center></th>
+            <th><center>価格(レンタル)</center></th>
+            <th><center>価格(購入)</center></th>
+            <th>　　　　</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>red 0001</th>
+            <td>S M L</td>
+            <td>40000円</td>
+            <td>200,000円</td>
+            <td><center>
+              <a href="masterItemData.html" class="btn btn-outline-warning">詳細</a>
+              <a href="masterItemupdata.html" class="btn btn-outline-warning">更新</a>
+              <a href="masterItemDelete.html" class="btn btn-outline-warning">削除</a>
+            </center></td>
+        </tr>
+        <tr>
+            <th>w-black 001</th>
+            <td>S M L</td>
+            <td>35,000円</td>
+            <td>150,000円</td>
+            <td><center>
+              <a href="masterItemData.html" class="btn btn-outline-warning">詳細</a>
+              <a href="masterItemupdata.html" class="btn btn-outline-warning">更新</a>
+              <a href="masterItemDelete.html" class="btn btn-outline-warning">削除</a>
+            </center></td>
+        </tr>
+        <tr>
+            <th>w-gold 001</th>
+            <td>S M L</td>
+            <td>20000円</td>
+            <td>150,000円</td>
+            <td><center>
+              <a href="masterItemData.html" class="btn btn-outline-warning">詳細</a>
+              <a href="masterItemupdata.html" class="btn btn-outline-warning">更新</a>
+              <a href="masterItemDelete.html" class="btn btn-outline-warning">削除</button>
+            </center></td>
+        </tr>
+    </tbody>
+</table>
+
+
+</div>
+</body>
+</html>
