@@ -12,9 +12,10 @@ public class UserDataBeans implements Serializable {
 	private Date birthDate;
 	private String loginId;
 	private String loginPass;
+	private String userType;
 
 	public UserDataBeans(int id2, String name2, String address2, String tel2, java.sql.Date birthDate2, String loginId2,
-			String loginPassword) {
+			String loginPassword, String userType2) {
 		this.id = id2;
 		this.name = name2;
 		this.address = address2;
@@ -22,6 +23,7 @@ public class UserDataBeans implements Serializable {
 		this.birthDate = birthDate2;
 		this.loginId =loginId2;
 		this.loginPass = loginPassword;
+		this.userType = userType2;
 	}
 	public int getId() {
 		return id;
@@ -64,6 +66,12 @@ public class UserDataBeans implements Serializable {
 	}
 	public void setLoginPass(String loginPass) {
 		this.loginPass = loginPass;
+	}
+	public String getUserType() {
+		return userType;
+	}
+	public void setUserType(String userType) {
+		this.userType = userType;
 	}
 
 }

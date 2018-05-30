@@ -37,7 +37,8 @@ public class UserDao {
 	            Date birthDate = rs.getDate("birth_date");
 	            String loginId1 = rs.getString("login_id");
 	            String loginPassword = rs.getString("login_pass");
-	            UserDataBeans loginUser = new UserDataBeans(id, name, address, tel, birthDate, loginId1, loginPassword);
+	            String userType = rs.getString("user_type");
+	            UserDataBeans loginUser = new UserDataBeans(id, name, address, tel, birthDate, loginId1, loginPassword,userType);
 	            return loginUser;
 	        }
 		}catch (SQLException e) {
@@ -76,7 +77,8 @@ public class UserDao {
                 Date birthDate = rs.getDate("birth_date");
                 String loginId = rs.getString("login_id");
                 String loginPassword = rs.getString("login_pass");
-                UserDataBeans udb2 = new UserDataBeans(id, name, address, tel, birthDate, loginId, loginPassword);
+                String userType = rs.getString("user_type");
+                UserDataBeans udb2 = new UserDataBeans(id, name, address, tel, birthDate, loginId, loginPassword,userType);
                 return udb2;
             }
 
@@ -96,14 +98,14 @@ public class UserDao {
 		return null;
 	}
 	public static void registrationUser(String loginId, String password, String password2, String name,
-			String birthDate, String address, String tel) {
+			String birthDate, String address, String tel, String userType) {
 
 		Connection conn = null;
 
 		try {
 			conn = DBManager.getConnection();
 
-			String sql ="INSERT INTO user(name,address,tel,birth_date, login_id,login_pass) VALUES(?,?,?,?,?,?)";
+			String sql ="INSERT INTO user(name,address,tel,birth_date, login_id,login_pass,user_type) VALUES(?,?,?,?,?,?,?)";
 
 			PreparedStatement pStmt = conn.prepareStatement(sql);
             pStmt.setString(1, name);
@@ -112,6 +114,8 @@ public class UserDao {
             pStmt.setString(4, birthDate);
             pStmt.setString(5, loginId);
             pStmt.setString(6, Common.password(password));
+            pStmt.setString(7, userType);
+
             pStmt.executeUpdate();
 
 		}catch(SQLException e) {
@@ -147,7 +151,8 @@ public class UserDao {
                 Date birthDate = rs.getDate("birth_date");
                 String loginId = rs.getString("login_id");
                 String password = rs.getString("login_pass");
-                UserDataBeans user = new UserDataBeans(id, name, address, tel, birthDate, loginId, password);
+                String userType = rs.getString("user_type");
+                UserDataBeans user = new UserDataBeans(id, name, address, tel, birthDate, loginId, password,userType);
 
                 userList.add(user);
             }
@@ -199,7 +204,8 @@ public class UserDao {
 	            Date birthDate1 = rs.getDate("birth_date");
 	            String loginId1 = rs.getString("login_id");
 	            String loginPassword = rs.getString("login_pass");
-	            UserDataBeans udb = new UserDataBeans(id, name1, address1, tel1, birthDate1, loginId1, loginPassword);
+	            String userType = rs.getString("user_type");
+	            UserDataBeans udb = new UserDataBeans(id, name1, address1, tel1, birthDate1, loginId1, loginPassword,userType);
 	            return udb;
 			}
 		} catch (Exception e) {
@@ -265,7 +271,8 @@ public class UserDao {
 	                Date birthDate = rs.getDate("birth_date");
 	                String loginId1 = rs.getString("login_id");
 	                String password = rs.getString("login_pass");
-	                UserDataBeans finduser = new UserDataBeans(id, name, address, tel, birthDate, loginId1, password);
+	                String userType = rs.getString("user_type");
+	                UserDataBeans finduser = new UserDataBeans(id, name, address, tel, birthDate, loginId1, password, userType);
 
 	                findUserData.add(finduser);
 	            }

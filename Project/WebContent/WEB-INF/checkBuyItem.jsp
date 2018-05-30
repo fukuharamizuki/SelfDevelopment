@@ -55,6 +55,15 @@
 						<th></th>
 						<th>${idb.deliveryPrice}円</th>
 					</tr>
+					<c:if test="${userInfo.userType=='講師'}" var="flg"/>
+					<c:if test="${flg}">
+						<tr align="center">
+							<th>講師特別20%割引</th>
+							<th></th>
+							<th></th>
+							<th>-${idb.waribiki}円</th>
+						</tr>
+					</c:if>
 					<tr align="center">
 						<th>合計</th>
 						<th></th>

@@ -63,6 +63,7 @@
         <th><center>ログインID</center></th>
         <th><center>ユーザー名</center></th>
         <th><center>生年月日</center></th>
+        <th><center>ユーザー区分</center></th>
         <th>　　　　</th>
       </tr>
     </thead>
@@ -72,6 +73,7 @@
         <th><center>${add.loginId}</center></th>
         <td><center>${add.name}</center></td>
         <td><center>${add.birthDate}</center></td>
+        <td><center>${add.userType}</center></center></td>
         <td><center>
           <a href="userDataMaster?id=${add.id}" class="btn btn-outline-info">詳細</a>
           <a href="userUpdataMaster?id=${add.id}" class="btn btn-outline-info">更新</a>

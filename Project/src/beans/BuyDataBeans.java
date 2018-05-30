@@ -13,6 +13,7 @@ public class BuyDataBeans implements Serializable {
 
 	private String deliveryName;
 	private int deliveryPrice;
+	private int waribiki;
 
 
 	public BuyDataBeans(int id2, int userId2, int totalPrice2, int deliveryId2, java.sql.Date createDate) {
@@ -69,6 +70,12 @@ public class BuyDataBeans implements Serializable {
 	public String getFormatDate() {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日");
 		return sdf.format(buyDate);
+	}
+	public int getWaribiki() {
+		return waribiki;
+	}
+	public void setWaribiki(int waribiki) {
+		this.waribiki = waribiki;
 	}
 
 

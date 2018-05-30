@@ -70,6 +70,16 @@
         <input type="tel" class="form-control" name="tel" id="inputtel" size="12" placeholder="電話番号は、市外局番からハイフン（-）を入れて記入してください。">
       </div>
     </div>
+     <div class="form-group row">
+      <label for="inputtel" class="col-sm-4 col-form-label">購入者選択</label>
+      <div class="col-sm-6">
+        <input type="text" required name="usertype" list="usertype">
+          <datalist id="usertype">
+            <option value="講師"></option>
+            <option value="一般"></option>
+          </datalist>
+      </div>
+    </div>
     <br>
     <center><button type="submit" class="btn btn-info">登録</button></center>
     </form>

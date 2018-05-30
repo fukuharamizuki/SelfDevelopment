@@ -33,7 +33,7 @@
 	<br>
 	<div class="row">
 		<div class="col-md-6" align="center">
-			<button type="submit" class="btn btn-info btn-lg">CANCEL</button>
+			<a href="addCart" class="btn btn-info btn-lg">CANCEL</a>
 		</div>
 	<div class="col-md-6" align="center">
 		<form method="post" action="addCartDelete?id=${deleteItem.id}">

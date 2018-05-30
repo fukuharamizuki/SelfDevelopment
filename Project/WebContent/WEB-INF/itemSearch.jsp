@@ -23,12 +23,12 @@
   <br>
   <center><p><font size="6">検索結果</font></p></center>
   <div class="input-area4">
-  <c:forEach var="add" items="${searchList}">
-    <div style="float:left; margin: 35px;">
-      <a href="itemData?id=${add.id}"><img src="img/${add.fileName}"></a>
-      <p>${add.name}</p>
-    </div>
-    </c:forEach>
+	<c:forEach var="add" items="${searchList}">
+		<div style="float:left; margin: 35px;">
+			<a href="itemData?id=${add.id}"><img src="img/${add.fileName}"></a>
+			<p>${add.name}</p>
+		</div>
+	</c:forEach>
   </div>
 
 </div>

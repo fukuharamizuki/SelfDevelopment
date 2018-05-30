@@ -46,6 +46,7 @@ public class userCreate extends HttpServlet {
 		String birthdate = request.getParameter("birthdate");
 		String address = request.getParameter("address");
 		String tel = request.getParameter("tel");
+		String usertype = request.getParameter("usertype");
 
 		if (!password.equals(password2)) {
 
@@ -64,7 +65,7 @@ public class userCreate extends HttpServlet {
 			return;
 
 		}else {
-			UserDao.registrationUser(loginId,password,password2,name,birthdate,address,tel);
+			UserDao.registrationUser(loginId,password,password2,name,birthdate,address,tel,usertype);
 			response.sendRedirect("login");
 		}
 	}

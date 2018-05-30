@@ -16,6 +16,7 @@ import DAO.DeliveryMethodDao;
 import beans.BuyDataBeans;
 import beans.DeliveryMethodBeans;
 import beans.ItemDataBeans;
+import beans.UserDataBeans;
 
 /**
  * Servlet implementation class checkBuyItem
@@ -23,6 +24,8 @@ import beans.ItemDataBeans;
 @WebServlet("/checkBuyItem")
 public class checkBuyItem extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+
+	private static final double SALE = 0.2;
 
     /**
      * @see HttpServlet#HttpServlet()
@@ -54,7 +57,14 @@ public class checkBuyItem extends HttpServlet {
 			int totalPrice = BuyDao.getTotalItemPrice(cartIDBList) + setDelivery.getDeliveryPrice();
 
 			BuyDataBeans idb = new BuyDataBeans();
-			idb.setTotalPrice(totalPrice);
+
+			UserDataBeans userInfo = (UserDataBeans) session.getAttribute("userInfo");
+			String userType = userInfo.getUserType();
+			if(userType.equals("講師")) {
+				idb.setWaribiki((int)(totalPrice * SALE));
+			}
+
+			idb.setTotalPrice(totalPrice - idb.getWaribiki());
 			idb.setDeliveryId(setDelivery.getId());
 			idb.setDeliveryName(setDelivery.getDeliveryName());
 			idb.setDeliveryPrice(setDelivery.getDeliveryPrice());

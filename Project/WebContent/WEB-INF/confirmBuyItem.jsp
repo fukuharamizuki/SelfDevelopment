@@ -75,6 +75,15 @@
 					</c:forEach>
 					</tr>
 					<tr align="center">
+					<c:if test="${userInfo.userType=='講師'}" var="flg"/>
+  					<c:if test="${flg}">
+						<th>講師特別20％割引</th>
+						<th></th>
+						<th></th>
+						<th>-${idb.waribiki}円</th>
+					</c:if>
+					</tr>
+					<tr align="center">
 						<th>${resultBDB.deliveryName}</th>
 						<th></th>
 						<th></th>
