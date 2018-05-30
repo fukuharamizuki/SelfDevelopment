@@ -260,22 +260,24 @@ public class ItemDao {
 
 		try {
 			conn = DBManager.getConnection();
-			String sql = "SELECT * FROM item where id > 0 and (name like '%search%' or detail like '%search%')";
+			String sql = "SELECT * FROM item where id > 0 and (name like '%"+search+"%' or detail like '%"+search+"%')";
+			System.out.println(sql);
 
-			Statement stmt = conn.createStatement();
-			ResultSet rs = stmt.executeQuery(sql);
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+			ResultSet rs = pStmt.executeQuery();
 
-	            while (rs.next()) {
-	                int id = rs.getInt("id");
-	                String name1 = rs.getString("name");
-	                String detail1 = rs.getString("detail");
-	                int price = rs.getInt("price");
-	                int rPrice = rs.getInt("r_price");
-	                ItemDataBeans idb = new ItemDataBeans(id, name1, detail1, price, rPrice);
-
-	                itemList.add(idb);
-	            }
-	            return itemList;
+			while (rs.next()) {
+                int id2 = rs.getInt("id");
+                String name = rs.getString("name");
+                String detail = rs.getString("detail");
+                int price = rs.getInt("price");
+                int rPrice = rs.getInt("r_price");
+                String file = rs.getString("file_name");
+                String type = rs.getString("type");
+                ItemDataBeans idb = new ItemDataBeans(id2, name, detail, price, rPrice, file, type);
+                itemList.add(idb);
+            }
+            return itemList;
 
 		} catch (Exception e) {
 			e.printStackTrace();

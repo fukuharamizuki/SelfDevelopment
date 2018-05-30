@@ -88,7 +88,7 @@
     <tbody>
     <c:forEach var="add" items="${buyItemList}">
       <tr align="center">
-        <th>${add.buyDate}</th>
+        <th>${add.formatDate}</th>
         <td>${add.totalPrice}円</td>
         <td>
           <a href="buyItemData?id=${add.id}" class="btn btn-outline-info">詳細</a>

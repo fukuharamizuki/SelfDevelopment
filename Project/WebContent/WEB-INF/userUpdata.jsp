@@ -47,25 +47,25 @@
       <div class="form-group row">
         <label for="inputName" class="col-sm-4 col-form-label">ユーザ名</label>
         <div class="col-sm-8">
-          <input type="text" class="form-control" name="name" id="inputName" placeholder="${userInfo.name}">
+          <input type="text" class="form-control" name="name" id="inputName" value="${userInfo.name}">
         </div>
       </div>
       <div class="form-group row">
         <label for="inputBirthDate" class="col-sm-4 col-form-label">生年月日</label>
         <div class="col-sm-8">
-          <input type="date" class="form-control" name="birthDate" id="inputBirthDate" placeholder="${userInfo.birthDate}">
+          <input type="date" class="form-control" name="birthDate" id="inputBirthDate" value="${userInfo.birthDate}">
         </div>
       </div>
       <div class="form-group row">
         <label for="inputaddress" class="col-sm-4 col-form-label">住所</label>
         <div class="col-sm-8">
-          <input type="text" class="form-control" name="address" id="inputaddress" placeholder="${userInfo.address}">
+          <input type="text" class="form-control" name="address" id="inputaddress" value="${userInfo.address}">
         </div>
       </div>
       <div class="form-group row">
         <label for="inputtel" class="col-sm-4 col-form-label">電話番号</label>
         <div class="col-sm-8">
-          <input type="tel" class="form-control" name="tel" id="inputtel" placeholder="${userInfo.tel}">
+          <input type="tel" class="form-control" name="tel" id="inputtel" value="${userInfo.tel}">
         </div>
       </div>
       <br>

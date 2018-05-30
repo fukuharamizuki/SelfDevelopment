@@ -14,6 +14,7 @@
 
    <meta charset="UTF-8">
 	 <title>検索結果</title>
+	 <jsp:include page="/baselayout/header.jsp" />
 
 </head>
 <body>
@@ -24,7 +25,7 @@
   <div class="input-area4">
   <c:forEach var="add" items="${searchList}">
     <div style="float:left; margin: 35px;">
-      <a href="itemData"><img src="img/${add.fileName}"></a>
+      <a href="itemData?id=${add.id}"><img src="img/${add.fileName}"></a>
       <p>${add.name}</p>
     </div>
     </c:forEach>

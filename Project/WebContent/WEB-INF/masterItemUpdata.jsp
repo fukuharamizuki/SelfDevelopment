@@ -36,19 +36,19 @@
       <div class="form-group row">
         <label for="inputPrice1" class="col-sm-4 col-form-label">価格(レンタル)</label>
         <div class="col-sm-8">
-          <input type="number" class="form-control" name="rPrice" id="inputPrice2" placeholder="${idb.RPrice}円">
+          <input type="number" class="form-control" name="rPrice" id="inputPrice2" value="${idb.RPrice}円">
         </div>
       </div>
       <div class="form-group row">
         <label for="inputPrice" class="col-sm-4 col-form-label">価格(購入)</label>
         <div class="col-sm-8">
-          <input type="number" class="form-control" name="price" id="inputPrice" placeholder="${idb.price}円">
+          <input type="number" class="form-control" name="price" id="inputPrice" value="${idb.price}円">
         </div>
       </div>
       <div class="form-group row">
         <label for="inputData" class="col-sm-4 col-form-label">詳細</label>
         <div class="col-sm-8">
-          <input type="text" class="form-control" name="detail" id="inputData" placeholder="${idb.detail}">
+          <input type="text" class="form-control" name="detail" id="inputData" value="${idb.detail}">
         </div>
       </div>
       <br>

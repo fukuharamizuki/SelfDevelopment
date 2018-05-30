@@ -40,7 +40,7 @@
             </thead>
     				<tbody>
               <tr align="center">
-                <th>${resultBDB.buyDate}</th>
+                <th>${resultBDB.formatDate}</th>
                 <th>${resultBDB.totalPrice}円</th>
               </tr>
             </tbody>
