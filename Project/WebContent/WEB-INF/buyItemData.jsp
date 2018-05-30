@@ -17,38 +17,38 @@
 
 </head>
 <body>
-<div class="container">
-  <br>
-  <br>
-  <p><center><font size="5">購入情報詳細</font></center></p>
-  <br>
-  <br>
-  <table class="table table-bordered">
-    <thead>
-      <tr class="bg-info text-white" align="center">
-        <th>商品</th>
-        <th>サイズ</th>
-        <th>個数</th>
-        <th>値段</th>
-      </tr>
-    </thead>
-    <tbody>
-    <c:forEach var="add" items="${itemdetailList}">
-      <tr align="center">
-        <th>${add.name}</th>
-        <th>${add.size}</th>
-        <td>${add.count}</td>
-        <td>${add.subTotal}円</td>
-      </tr>
-      </c:forEach>
-      <tr align="center">
-      <th>${resultBDB.deliveryName}</th>
-        <th></th>
-        <td></td>
-        <td>${resultBDB.deliveryPrice}円</td>
-      </tr>
-    </tbody>
-  </table>
+	<div class="container">
+	<br>
+	<br>
+	<p><center><font size="5">購入情報詳細</font></center></p>
+	<br>
+	<br>
+	<table class="table table-bordered">
+		<thead>
+			<tr class="bg-info text-white" align="center">
+				<th>商品</th>
+				<th>サイズ</th>
+				<th>個数</th>
+				<th>値段</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach var="add" items="${itemdetailList}">
+				<tr align="center">
+					<th>${add.name}</th>
+					<th>${add.size}</th>
+					<td>${add.count}</td>
+					<td>${add.subTotal}円</td>
+				</tr>
+			</c:forEach>
+			<tr align="center">
+				<th>${resultBDB.deliveryName}</th>
+				<th></th>
+				<td></td>
+				<td>${resultBDB.deliveryPrice}円</td>
+			</tr>
+		</tbody>
+	</table>
 
 </div>
 </body>

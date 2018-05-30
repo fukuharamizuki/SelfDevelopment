@@ -20,26 +20,26 @@
 
 <body>
 <div class="container">
-  <br>
-  <br>
-  <center><h2>購入</h1></center>
-  <br>
-  <br>
-  <div class="card border-info">
-    <div class="class-body">
-      <br>
-      <br>
-      <div class="row">
-        <div class="col-md-12" align="center">
-          <table class="table">
-    				<thead>
-    					<tr align="center">
-    						<th>商品名</th>
-						 <th>サイズ</th>
-    						<th>数量</th>
-    						<th>小計</th>
-    					</tr>
-            </thead>
+	<br>
+	<br>
+	<center><h2>購入</h1></center>
+	<br>
+	<br>
+	<div class="card border-info">
+    		<div class="class-body">
+		<br>
+		<br>
+		<div class="row">
+			<div class="col-md-12" align="center">
+				<table class="table">
+    					<thead>
+    						<tr align="center">
+	    						<th>商品名</th>
+							 <th>サイズ</th>
+	    						<th>数量</th>
+	    						<th>小計</th>
+    						</tr>
+					</thead>
     				<tbody>
     				<c:forEach var="add" items="${cart}" >
 					<tr align="center">

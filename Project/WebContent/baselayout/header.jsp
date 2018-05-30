@@ -33,6 +33,7 @@
       <div class="container">
 		<c:if test="${userInfo.name!=null}">
 			<a class="flex-sm-fill text-sm-center nav-link" href="userData">詳細</a>
+			<a class="flex-sm-fill text-sm-center nav-link" href="addCart">カート</a>
 			<a class="flex-sm-fill text-sm-center nav-link" href="logOut">LogOut</a>
 		</c:if>
 		<c:if test="${userInfo.name==null}">

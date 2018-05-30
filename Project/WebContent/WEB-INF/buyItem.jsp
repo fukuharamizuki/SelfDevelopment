@@ -59,17 +59,17 @@
 						<option value="${delivery.id}">${delivery.deliveryName}</option>
 					</c:forEach>
 					</select>
-          		</div>
-        		</th>
+				</div>
+			</th>
+		</tr>
 	</tbody>
-  </table>
-  <br>
-  <br>
-    <div align="center">
-      <button type="submit" name="action" class="btn btn-outline-info">お会計へ</button>
- 	</div>
- 	 </div>
- 	</form>
+	</table>
+	<br>
+	<br>
+	<div align="center">
+		<button type="submit" name="action" class="btn btn-outline-info">お会計へ</button>
+	</div>
+	</form>
 
 
 

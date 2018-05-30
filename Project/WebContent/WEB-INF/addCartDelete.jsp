@@ -20,21 +20,21 @@
 <body>
 <div class="container">
 
-  <br>
-  <br>
+	<br>
+	<br>
     <p><center><font size="6">カートアイテム削除確認</font></center></p>
 
-  <br>
-  <br>
-  <center><p>${deleteItem.name}を</p></center>
-  <center><p>本当に削除してよろしいでしょうか。</p></center>
+	<br>
+	<br>
+	<center><p>${deleteItem.name}を</p></center>
+	<center><p>本当に削除してよろしいでしょうか。</p></center>
 
-  <br>
-  <br>
-  <div class="row">
-    <div class="col-md-6" align="center">
-		<button type="submit" class="btn btn-info btn-lg">CANCEL</button>
-	</div>
+	<br>
+	<br>
+	<div class="row">
+		<div class="col-md-6" align="center">
+			<button type="submit" class="btn btn-info btn-lg">CANCEL</button>
+		</div>
 	<div class="col-md-6" align="center">
 		<form method="post" action="addCartDelete?id=${deleteItem.id}">
 			<button type="submit" class="btn btn-info btn-lg">　OK　</button>
