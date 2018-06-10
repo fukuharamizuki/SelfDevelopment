@@ -19,17 +19,17 @@
 </head>
 <body>
 <div class="container">
-  <br>
-  <br>
-  <center><p><font size="6">ClassicTutu</font></p></center>
-  <div class="input-area4">
-  <c:forEach var="item" items="${itemList}" >
-    <div style="float:left; margin: 35px;">
-      <a href="itemData?id=${item.id}"><img src="img/${item.fileName}"></a>
-      <p>${item.name}</p>
-    </div>
-    </c:forEach>
-  </div>
+	<br>
+	<br>
+	<center><p><font size="6">ClassicTutu</font></p></center>
+	<div class="input-area4">
+		<c:forEach var="item" items="${itemList}" >
+			<div style="float:left; margin: 35px;">
+				<a href="itemData?id=${item.id}"><img src="img/${item.fileName}"></a>
+				<p>${item.name}</p>
+			</div>
+		</c:forEach>
+	</div>
 
 </div>
 </body>

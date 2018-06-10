@@ -32,9 +32,10 @@ public class itemTypeList extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//itemtypeIdの取得
 		String id = request.getParameter("id");
 		ItemDao userDao = new ItemDao();
-
+		//選択されたtypeのitemを取得
 		List<ItemDataBeans> itemList = userDao.itemData(id);
 
 		request.setAttribute("itemList", itemList);

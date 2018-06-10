@@ -31,8 +31,10 @@ public class masterItemDelete extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//itemId取得
 		int id = Integer.parseInt(request.getParameter("id"));
 		try {
+			//item情報取得
 			ItemDao itemDao = new ItemDao();
 			ItemDataBeans idb = itemDao.itemData(id);
 			request.setAttribute("idb", idb);
@@ -48,8 +50,10 @@ public class masterItemDelete extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//itemId取得
 		int id = Integer.parseInt(request.getParameter("id"));
 		try {
+			//DBからitem情報消去
 			ItemDao itemDao = new ItemDao();
 			ItemDataBeans idb = itemDao.deleteItem(id);
 

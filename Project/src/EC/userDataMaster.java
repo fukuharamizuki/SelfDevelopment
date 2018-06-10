@@ -31,9 +31,11 @@ public class userDataMaster extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//userIdの取得
 		int userId = Integer.parseInt(request.getParameter("id"));
 
 		try {
+			//user情報取得
 			UserDataBeans userData = UserDao.findData(userId);
 			request.setAttribute("userData", userData);
 

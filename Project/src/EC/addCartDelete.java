@@ -33,8 +33,9 @@ public class addCartDelete extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//item id 取得
 		int id = Integer.parseInt(request.getParameter("id"));
-
+		//消去するitem情報取得
 		ItemDao itemDao = new ItemDao();
 		ItemDataBeans deleteItem = itemDao.itemData(id);
 		request.setAttribute("deleteItem", deleteItem);
@@ -49,6 +50,7 @@ public class addCartDelete extends HttpServlet {
 		HttpSession session = request.getSession();
 
 		try {
+			//カート内からitemを消去
 			ArrayList<ItemDataBeans> cart = (ArrayList<ItemDataBeans>) session.getAttribute("cart");
 			int id = Integer.parseInt(request.getParameter("id"));
 			for (ItemDataBeans cartInItem : cart) {

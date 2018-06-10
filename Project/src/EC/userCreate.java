@@ -38,6 +38,7 @@ public class userCreate extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//新規ユーザー情報の取得
 		request.setCharacterEncoding("UTF-8");
 		String loginId = request.getParameter("Id");
 		String password = request.getParameter("password");
@@ -56,7 +57,7 @@ public class userCreate extends HttpServlet {
 			dispatcher.forward(request, response);
 			return;
 
-		}else if(loginId.equals("") || password.equals("") || password2.equals("") || name.equals("") || birthdate.equals("") || address.equals("") || tel.equals("")) {
+		}else if(loginId.equals("") || password.equals("") || password2.equals("") || name.equals("") || birthdate.equals("") || address.equals("") || tel.equals("") || usertype.equals("")) {
 
 			request.setAttribute("errMsg", "すべての項目を入力してください");
 
@@ -65,6 +66,7 @@ public class userCreate extends HttpServlet {
 			return;
 
 		}else {
+			//DBへ新規ユーザー情報の取得
 			UserDao.registrationUser(loginId,password,password2,name,birthdate,address,tel,usertype);
 			response.sendRedirect("login");
 		}

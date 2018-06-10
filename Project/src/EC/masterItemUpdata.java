@@ -31,8 +31,10 @@ public class masterItemUpdata extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//itemId取得
 		int id = Integer.parseInt(request.getParameter("id"));
 		try {
+			//item情報取得
 			ItemDao itemDao = new ItemDao();
 			ItemDataBeans idb = itemDao.itemData(id);
 			request.setAttribute("idb", idb);
@@ -47,6 +49,7 @@ public class masterItemUpdata extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//更新情報の取得
 		request.setCharacterEncoding("UTF-8");
 		int id = Integer.parseInt(request.getParameter("id"));
 		int rPrice = Integer.parseInt(request.getParameter("rPrice"));
@@ -54,6 +57,7 @@ public class masterItemUpdata extends HttpServlet {
 		String detail = request.getParameter("detail");
 
 		try {
+			//DBのitem情報更新
 			ItemDao itemDao = new ItemDao();
 			ItemDataBeans itemUpData = itemDao.updataItem(id,rPrice,price,detail);
 

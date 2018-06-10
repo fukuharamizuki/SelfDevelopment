@@ -28,29 +28,29 @@
 	</c:if>
 
 
-<br>
-<br>
-  <p><center><font size="7">Sign in</font></center></p>
+	<br>
+	<br>
+	<p><center><font size="7">Sign in</font></center></p>
 
-  <div class="input-area2">
-  <center>
-  <form method="post" action="login">
-    <div class="form-group">
-      <label class="col-sm-4 col-form-label" for="formGroupExampleInput">ID</label>
-      <div class="col-sm-8">
-        <input type="text" class="form-control" name="loginId" id="formGroupExampleInput" placeholder="">
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="col-sm-4 col-form-label" for="formGroupExampleInput2">PASSWORD</label>
-      <div class="col-sm-8">
-      <input type="password" class="form-control" name="password" id="formGroupExampleInput2" placeholder="">
-      </div>
-    </div>
-    <center><button type="submit" class="btn btn-outline-info">LogIn</button></center>
-  </form>
-  </center>
-  </div>
+	<div class="input-area2">
+		<center>
+			<form method="post" action="login">
+				<div class="form-group">
+					<label class="col-sm-4 col-form-label" for="formGroupExampleInput">ID</label>
+					<div class="col-sm-8">
+						<input type="text" class="form-control" name="loginId" id="formGroupExampleInput" placeholder="">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-4 col-form-label" for="formGroupExampleInput2">PASSWORD</label>
+					<div class="col-sm-8">
+						<input type="password" class="form-control" name="password" id="formGroupExampleInput2" placeholder="">
+					</div>
+				</div>
+				<center><button type="submit" class="btn btn-outline-info">LogIn</button></center>
+			</form>
+		</center>
+	</div>
 </div>
 </body>
 </html>

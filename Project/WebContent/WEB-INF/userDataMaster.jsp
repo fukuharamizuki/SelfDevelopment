@@ -20,46 +20,46 @@
 <body>
 <div class="container">
 
-  <br>
-  <br>
+	<br>
+	<br>
 
-  <p><center><font size="5">ユーザ情報詳細</font></center></p>
+	<p><center><font size="5">ユーザ情報詳細</font></center></p>
 
-  <div class="input-area-userData">
-    <div class="form-group row">
-      <label for="inputID" class="col-sm-4 col-form-label">ログインID</label>
-      <div class="col-sm-8 form-control-plaintext">
-        ${userData.loginId}
-      </div>
-    </div>
-    <div class="form-group row">
-      <label for="inputName" class="col-sm-4 col-form-label">ユーザ名</label>
-      <div class="col-sm-8 form-control-plaintext">
-        ${userData.name}
-      </div>
-    </div>
-    <div class="form-group row">
-      <label for="inputDate" class="col-sm-4 col-form-label">生年月日</label>
-      <div class="col-sm-8 form-control-plaintext">
-        ${userData.birthDate}
-      </div>
-    </div>
-    <div class="form-group row">
-      <label for="inputCreatetime" class="col-sm-4 col-form-label">住所</label>
-      <div class="col-sm-8 form-control-plaintext">
-        ${userData.address}
-      </div>
-    </div>
-    <div class="form-group row">
-      <label for="inputUpdatetime" class="col-sm-4 col-form-label">電話番号</label>
-      <div class="col-sm-8 form-control-plaintext">
-        ${userData.tel}
-      </div>
-    </div>
-    <br>
-  </div>
+	<div class="input-area-userData">
+		<div class="form-group row">
+			<label for="inputID" class="col-sm-4 col-form-label">ログインID</label>
+			<div class="col-sm-8 form-control-plaintext">
+				${userData.loginId}
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="inputName" class="col-sm-4 col-form-label">ユーザ名</label>
+			<div class="col-sm-8 form-control-plaintext">
+				${userData.name}
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="inputDate" class="col-sm-4 col-form-label">生年月日</label>
+			<div class="col-sm-8 form-control-plaintext">
+				${userData.birthDate}
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="inputCreatetime" class="col-sm-4 col-form-label">住所</label>
+			<div class="col-sm-8 form-control-plaintext">
+				${userData.address}
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="inputUpdatetime" class="col-sm-4 col-form-label">電話番号</label>
+			<div class="col-sm-8 form-control-plaintext">
+				${userData.tel}
+			</div>
+		</div>
+		<br>
+	</div>
 
-    <div align="right"><a href="userList" class="btn btn-outline-info">戻る</a></div>
+	<div align="right"><a href="userList" class="btn btn-outline-info">戻る</a></div>
 	<br>
 
 </div>

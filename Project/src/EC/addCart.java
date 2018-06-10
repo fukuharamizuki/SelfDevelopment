@@ -54,6 +54,7 @@ public class addCart extends HttpServlet {
 
 			request.setAttribute("addItem", addItem);
 
+			//カート内アイテム情報セット
 			ArrayList<ItemDataBeans> cart = (ArrayList<ItemDataBeans>) session.getAttribute("cart");
 
 			if (cart == null) {

@@ -12,6 +12,10 @@ import beans.DeliveryMethodBeans;
 
 public class DeliveryMethodDao {
 
+	/*
+	 * 配送方法の取得
+	 * buyItem.java
+	 */
 	public static ArrayList <DeliveryMethodBeans> getAll() throws SQLException{
 		Connection conn = null;
 		PreparedStatement st = null;
@@ -42,7 +46,10 @@ public class DeliveryMethodDao {
 		}
 
 	}
-
+	/*
+	 * idから配送情報の取得
+	 * checkBuyItem.java
+	 */
 	public DeliveryMethodBeans findDelivery(int id) {
 		Connection conn = null;
 		List<DeliveryMethodBeans> findDelivery = new ArrayList<DeliveryMethodBeans>();

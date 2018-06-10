@@ -31,9 +31,11 @@ public class userDelete extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//userIdの取得
 		int userId = Integer.parseInt(request.getParameter("id"));
 
 		try {
+			//user情報取得
 			UserDataBeans userData = UserDao.findData(userId);
 			request.setAttribute("userData", userData);
 
@@ -48,9 +50,11 @@ public class userDelete extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//userId取得
 		int userId = Integer.parseInt(request.getParameter("id"));
 
 		try {
+			//DBからuser情報の消去
 			UserDataBeans userData = UserDao.deleteData(userId);
 			request.setAttribute("userData", userData);
 

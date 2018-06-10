@@ -12,6 +12,10 @@ import beans.ItemDataBeans;
 
 public class BuyDetailDao {
 
+	/*
+	 * DB:buy_detailテーブルへ登録
+	 * comfirmBuyItem.java
+	 */
 	public static void insertBuyDetail(BuyDetailBeans bdb) throws SQLException {
 		Connection con = null;
 		PreparedStatement st = null;
@@ -36,6 +40,10 @@ public class BuyDetailDao {
 		}
 	}
 
+	/*
+	 * item詳細取得,buytype別料金取得
+	 * comfirmButItem.java
+	 */
 	public static ArrayList<ItemDataBeans> getItemDataBeansListByBuyId(int buyId,int buytype) throws SQLException {
 		Connection con = null;
 		PreparedStatement st = null;
@@ -85,6 +93,10 @@ public class BuyDetailDao {
 		}
 	}
 
+	/*
+	 * 購入したitem情報の取得
+	 * buyItemData.java
+	 */
 	public static ArrayList<ItemDataBeans> getItemDetail(int buyId){
 		ArrayList<ItemDataBeans> buyDetailItemList = new ArrayList<ItemDataBeans>();
 

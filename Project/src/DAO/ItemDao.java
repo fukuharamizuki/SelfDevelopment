@@ -13,6 +13,10 @@ import beans.ItemDataBeans;
 
 public class ItemDao {
 
+	/*
+	 * itemtype別item取得
+	 * itemTypeList.java
+	 */
 	public List<ItemDataBeans> itemData(String id){
 
 		Connection conn = null;
@@ -47,6 +51,10 @@ public class ItemDao {
 		return itemList;
 	}
 
+	/*
+	 * item情報取得　item_id
+	 * addCartDelete.java,itemData.java,masterItemData.java,masterItemDelete.java,masterItemUpdata.java
+	 */
 	public ItemDataBeans itemData(int id) {
 		Connection conn = null;
 		List<ItemDataBeans> itemData = new ArrayList<ItemDataBeans>();
@@ -81,6 +89,10 @@ public class ItemDao {
 
 	}
 
+	/*
+	 * カート内のアイテム情報取得
+	 * addCart.java
+	 */
 	public ItemDataBeans addCart(int id,String buytype,String size,int count) {
 		Connection conn = null;
 		List<ItemDataBeans> itemData = new ArrayList<ItemDataBeans>();
@@ -123,6 +135,10 @@ public class ItemDao {
 		}
 		return null;
 	}
+	/*
+	 * 全てのitem情報の取得
+	 * masterItemList.java
+	 */
 	public ArrayList<ItemDataBeans> findItem(){
 		Connection conn = null;
 		ArrayList<ItemDataBeans> itemList = new ArrayList<ItemDataBeans>();
@@ -153,6 +169,10 @@ public class ItemDao {
 		}
 		return null;
 	}
+	/*
+	 * 新しいitemの登録 DB:itemテーブル
+	 * masterCreateItem.java
+	 */
 	public static ItemDataBeans insertItem(String name, int rPrice, int price, String detail, int type) {
 		Connection conn = null;
 		try {
@@ -180,6 +200,10 @@ public class ItemDao {
 		}
 		return null;
     }
+	/*
+	 * DB:itemテーブルの更新
+	 * masterItemUpdata.java
+	 */
 	public ItemDataBeans updataItem(int id, int rPrice, int price, String detail) {
 		Connection conn = null;
 		PreparedStatement st = null;
@@ -201,6 +225,10 @@ public class ItemDao {
 		}
 		return null;
 	}
+	/*
+	 * DB:itemテーブルから選択したitemを消去
+	 * masterItemDelete.java
+	 */
 	public ItemDataBeans deleteItem(int id) {
 		Connection conn = null;
 
@@ -217,6 +245,10 @@ public class ItemDao {
 		}
 		return null;
 	}
+	/*
+	 * name,detailの部分一致検索
+	 * masterItemList.java
+	 */
 	public ArrayList<ItemDataBeans> findItemList(String name, String detail){
 		Connection conn = null;
 		ArrayList<ItemDataBeans> itemList = new ArrayList<ItemDataBeans>();
@@ -254,6 +286,10 @@ public class ItemDao {
 		}
 		return null;
 	}
+	/*
+	 * name,detail部分一致検索
+	 * itemSearch.java
+	 */
 	public ArrayList<ItemDataBeans> searchItem(String search){
 		Connection conn = null;
 		ArrayList <ItemDataBeans> itemList = new ArrayList <ItemDataBeans>();

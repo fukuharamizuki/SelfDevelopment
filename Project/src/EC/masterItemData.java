@@ -31,8 +31,10 @@ public class masterItemData extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//itemIdの取得
 		int id = Integer.parseInt(request.getParameter("id"));
 		try {
+			//item詳細取得
 			ItemDao itemDao = new ItemDao();
 			ItemDataBeans idb = itemDao.itemData(id);
 			request.setAttribute("idb", idb);

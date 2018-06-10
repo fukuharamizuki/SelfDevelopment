@@ -32,6 +32,7 @@ public class masterItemList extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//全item情報の取得
 		ItemDao itemDao = new ItemDao();
 		ArrayList<ItemDataBeans> itemList = itemDao.findItem();
 		request.setAttribute("itemList", itemList);
@@ -45,11 +46,13 @@ public class masterItemList extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//name,detail検索ワードの取得
 		request.setCharacterEncoding("UTF-8");
 		String name =request.getParameter("name");
 		String detail = request.getParameter("detail");
 
 		try {
+			//検索
 			ItemDao itemDao = new ItemDao();
 			ArrayList<ItemDataBeans> itemList = itemDao.findItemList(name,detail);
 			request.setAttribute("itemList", itemList);

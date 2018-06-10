@@ -31,9 +31,10 @@ public class userUpdataMaster extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//userId取得
 		int userId = Integer.parseInt(request.getParameter("id"));
-
 		try {
+			//user情報取得
 			UserDataBeans userData = UserDao.findData(userId);
 			request.setAttribute("userData", userData);
 
@@ -49,6 +50,7 @@ public class userUpdataMaster extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
+			//user更新情報の取得
 			request.setCharacterEncoding("UTF-8");
 			String loginId = request.getParameter("loginId");
 			String password = request.getParameter("password1");
@@ -57,19 +59,20 @@ public class userUpdataMaster extends HttpServlet {
 			String birthDate = request.getParameter("birthDate");
 			String address = request.getParameter("address");
 			String tel = request.getParameter("tel");
-
-			UserDao userDao = new UserDao();
-			UserDataBeans updataUser = userDao.userUpdata(loginId,password,password2,name,birthDate,address,tel);
-			request.setAttribute("updataUser", updataUser);
+			String usertype = request.getParameter("usertype");
 
 			if (!password.equals(password2)) {
 
-				request.setAttribute("errMsg", "入力された内容は正しくありません");
-
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/userupdate.jsp");
+				request.setAttribute("errMsg", "パスワードが一致しません");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/userUpdataMaster.jsp");
 				dispatcher.forward(request, response);
+
 				return;
 			}else {
+				UserDao userDao = new UserDao();
+				//DBのuser情報更新
+				UserDataBeans updataUser = userDao.userUpdata(loginId,password,password2,name,birthDate,address,tel,usertype);
+				request.setAttribute("updataUser", updataUser);
 				response.sendRedirect("userList");
 			}
 

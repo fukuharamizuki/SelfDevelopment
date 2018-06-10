@@ -36,6 +36,7 @@ public class buyItem extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 
+		//配送方法の取得
 		ArrayList<DeliveryMethodBeans> dMDBList;
 		try {
 			dMDBList = DeliveryMethodDao.getAll();

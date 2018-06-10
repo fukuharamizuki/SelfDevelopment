@@ -44,6 +44,7 @@ public class userUpdata extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		try {
+			//更新するuser情報取得
 			request.setCharacterEncoding("UTF-8");
 			String loginId = request.getParameter("loginId");
 			String password = request.getParameter("password1");
@@ -52,19 +53,23 @@ public class userUpdata extends HttpServlet {
 			String birthDate = request.getParameter("birthDate");
 			String address = request.getParameter("address");
 			String tel = request.getParameter("tel");
-
-			UserDao userDao = new UserDao();
-			UserDataBeans updataUser = userDao.userUpdata(loginId,password,password2,name,birthDate,address,tel);
-			session.setAttribute("userInfo", updataUser);
+			String usertype = request.getParameter("usertype");
 
 			if (!password.equals(password2)) {
+				request.setAttribute("errMsg", "パスワードが一致しません");
 
-				request.setAttribute("errMsg", "入力された内容は正しくありません");
-
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/userupdate.jsp");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/userUpdata.jsp");
 				dispatcher.forward(request, response);
-				return;
+			}else if(password.equals("") || password2.equals("")) {
+				request.setAttribute("errMsg", "パスワードは必ず入力してください");
+
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/userUpdata.jsp");
+				dispatcher.forward(request, response);
 			}else {
+				//user情報更新
+				UserDao userDao = new UserDao();
+				UserDataBeans updataUser = userDao.userUpdata(loginId,password,password2,name,birthDate,address,tel,usertype);
+				session.setAttribute("userInfo", updataUser);
 				response.sendRedirect("userData");
 			}
 

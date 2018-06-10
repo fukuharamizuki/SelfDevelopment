@@ -46,14 +46,18 @@ public class comfirmBuyItem extends HttpServlet {
 		HttpSession session = request.getSession();
 
 		try {
+			//カート内のアイテムを取得
 			ArrayList<ItemDataBeans> cart = (ArrayList<ItemDataBeans>) session.getAttribute("cart");
+			//購入予定のアイテム合計、配送方法の取得
 			BuyDataBeans idb = (BuyDataBeans) session.getAttribute("idb");
+			//ログインユーザー情報の取得
 			UserDataBeans userInfo = (UserDataBeans) session.getAttribute("userInfo");
 
+			//DBへ購入情報の登録 buyテーブル
 			int buyId = BuyDao.insertBuy(userInfo.getId(),idb);
 
 			for (ItemDataBeans cartInItem : cart) {
-
+				//DBへ購入情報登録　buy_detailテーブル
 				BuyDetailBeans bdb = new BuyDetailBeans();
 				bdb.setBuyId(buyId);
 				bdb.setItemId(cartInItem.getId());
@@ -63,10 +67,10 @@ public class comfirmBuyItem extends HttpServlet {
 				BuyDetailDao.insertBuyDetail(bdb);
 
 			}
-
+			//購入item情報取得(buy)
 			BuyDataBeans resultBDB = BuyDao.getBuyDataBeansByBuyId(buyId);
 			request.setAttribute("resultBDB", resultBDB);
-
+			//購入item詳細取得(buy_detail)
 			for (ItemDataBeans cartInItem : cart) {
 				ArrayList<ItemDataBeans> buyIDBList = BuyDetailDao.getItemDataBeansListByBuyId(buyId,cartInItem.getBuyType());
 				request.setAttribute("buyIDBList", buyIDBList);

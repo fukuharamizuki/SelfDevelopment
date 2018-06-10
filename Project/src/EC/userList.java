@@ -34,6 +34,7 @@ public class userList extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		UserDao userDao =new UserDao();
+		//全user情報の取得
 		List<UserDataBeans> userList = userDao.findAll();
 
 		request.setAttribute("userList", userList);
@@ -46,6 +47,7 @@ public class userList extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//検索ワード取得
 		request.setCharacterEncoding("UTF-8");
 		String loginId = request.getParameter("loginId");
 		String name = request.getParameter("username");
@@ -53,6 +55,7 @@ public class userList extends HttpServlet {
 		String birthDate2 = request.getParameter("birthdate2");
 
 		UserDao userDao = new UserDao();
+		//検索
 		ArrayList<UserDataBeans> findUser = userDao.findUser(loginId,name,birthDate1,birthDate2);
 
 		request.setAttribute("userList", findUser);

@@ -38,6 +38,7 @@ public class masterCreateItem extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//新しく登録するitem情報取得
 		request.setCharacterEncoding("UTF-8");
 		String itemName = request.getParameter("itemname");
 		int rPrice = Integer.parseInt(request.getParameter("rPrice"));
@@ -46,13 +47,13 @@ public class masterCreateItem extends HttpServlet {
 		int type = Integer.parseInt(request.getParameter("type"));
 
 		try {
+			// DBに登録
 			ItemDao.insertItem(itemName,rPrice,price,detail,type);
 			response.sendRedirect("masterItemList");
 
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-
 
 	}
 

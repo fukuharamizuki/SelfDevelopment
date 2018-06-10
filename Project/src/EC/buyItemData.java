@@ -34,12 +34,14 @@ public class buyItemData extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//buyId 取得
 		int buyId = Integer.parseInt(request.getParameter("id"));
 
 		try {
+			//購入したitemのbuy_detailテーブル取得
 			ArrayList<ItemDataBeans> itemdetailList = BuyDetailDao.getItemDetail(buyId);
 			request.setAttribute("itemdetailList", itemdetailList);
-
+			//購入したitemのbuyテーブル取得
 			BuyDataBeans resultBDB = BuyDao.getBuyDataBeansByBuyId(buyId);
 			request.setAttribute("resultBDB", resultBDB);
 

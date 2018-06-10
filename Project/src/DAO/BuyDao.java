@@ -15,6 +15,10 @@ import beans.ItemDataBeans;
 
 public class BuyDao {
 
+	/*
+	 * 購入アイテム合計
+	 * checkBuyItem.java
+	 */
 	public static int getTotalItemPrice(ArrayList<ItemDataBeans> items) {
 		int total = 0;
 		for (ItemDataBeans item : items) {
@@ -23,6 +27,10 @@ public class BuyDao {
 		return total;
 	}
 
+	/*
+	 *DB:buyテーブルへ登録
+	 *comfirmBuyItem.java
+	 */
 	public static int insertBuy(int id, BuyDataBeans bdb) throws SQLException {
 		Connection conn = null;
 		PreparedStatement st = null;
@@ -30,10 +38,11 @@ public class BuyDao {
 
 		try {
 			conn = DBManager.getConnection();
-			st = conn.prepareStatement("INSERT INTO buy(user_id,total_price,delivery_id,create_date) VALUES(?,?,?,now())",Statement.RETURN_GENERATED_KEYS);
+			st = conn.prepareStatement("INSERT INTO buy(user_id,total_price,delivery_id,create_date,t_sale) VALUES(?,?,?,now(),?)",Statement.RETURN_GENERATED_KEYS);
 			st.setInt(1, id);
 			st.setInt(2, bdb.getTotalPrice());
 			st.setInt(3, bdb.getDeliveryId());
+			st.setInt(4, bdb.getWaribiki());
 			st.executeUpdate();
 
 			ResultSet rs = st.getGeneratedKeys();
@@ -50,6 +59,10 @@ public class BuyDao {
 		}
 		return autoIncKey;
 	}
+	/*
+	 * 購入したitem,使用した配達方法の取得
+	 * buyItemData.java,comfirmBuyItem.java
+	 */
 	public static BuyDataBeans getBuyDataBeansByBuyId(int buyId) throws SQLException {
 		Connection con = null;
 		PreparedStatement st = null;
@@ -74,6 +87,7 @@ public class BuyDao {
 				bdb.setUserId(rs.getInt("user_id"));
 				bdb.setDeliveryPrice(rs.getInt("delivery_price"));
 				bdb.setDeliveryName(rs.getString("delivery_name"));
+				bdb.setWaribiki(rs.getInt("t_sale"));
 			}
 			return bdb;
 		} catch (SQLException e) {
@@ -85,6 +99,10 @@ public class BuyDao {
 			}
 		}
 	}
+	/*
+	 * userIdから購入itemの情報取得
+	 *userData.java
+	 */
 	public static List<BuyDataBeans> getBuyItemList(int userId){
 		Connection conn = null;
 		PreparedStatement st = null;

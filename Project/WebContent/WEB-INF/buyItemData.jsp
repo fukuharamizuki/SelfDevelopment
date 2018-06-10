@@ -41,6 +41,15 @@
 					<td>${add.subTotal}円</td>
 				</tr>
 			</c:forEach>
+			<c:if test="${userInfo.userType=='講師'}" var="flg"/>
+  			<c:if test="${flg}">
+			<tr align="center">
+				<th>講師割引20％</th>
+				<th></th>
+				<td></td>
+				<td>${resultBDB.waribiki}円</td>
+			</tr>
+			</c:if>
 			<tr align="center">
 				<th>${resultBDB.deliveryName}</th>
 				<th></th>

@@ -40,9 +40,10 @@ public class itemSearch extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//検索ワードの取得
 		request.setCharacterEncoding("UTF-8");
 		String search = request.getParameter("search");
-
+		//検索結果取得
 		try {
 			ItemDao itemDao = new ItemDao();
 			ArrayList<ItemDataBeans> searchList = itemDao.searchItem(search);

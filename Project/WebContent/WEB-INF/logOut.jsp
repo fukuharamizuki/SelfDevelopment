@@ -20,14 +20,14 @@
 <body>
 <div class="container">
 
-<br>
-<br>
+	<br>
+	<br>
 
-  <p><center><font size="5">ログアウトしました</font></center></p>
-<br>
-<br>
+	<p><center><font size="5">ログアウトしました</font></center></p>
+	<br>
+	<br>
 
-  <center><a href="index" class="btn btn-outline-info">TOPへ</a></center>
+	<center><a href="index" class="btn btn-outline-info">TOPへ</a></center>
 
 </div>
 </body>

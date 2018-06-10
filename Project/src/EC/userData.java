@@ -36,9 +36,10 @@ public class userData extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		try {
+			//ログインユーザーの情報取得
 			UserDataBeans userInfo = (UserDataBeans) session.getAttribute("userInfo");
 			int userId = userInfo.getId();
-
+			//購入item情報取得
 			List<BuyDataBeans> buyItemList = BuyDao.getBuyItemList(userId);
 			request.setAttribute("buyItemList", buyItemList);
 

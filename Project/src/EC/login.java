@@ -40,9 +40,10 @@ public class login extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//loginId,password取得
 		String loginId = request.getParameter("loginId");
 		String password = request.getParameter("password");
-
+		//login処理
 		UserDao userDao = new UserDao();
 		UserDataBeans user = userDao.findLogin(loginId, password);
 		if (user == null) {
@@ -52,7 +53,7 @@ public class login extends HttpServlet {
 			dispatcher.forward(request, response);
 			return;
 		}
-
+		//ログインユーザー情報セット
 		HttpSession session = request.getSession();
 		session.setAttribute("userInfo", user);
 

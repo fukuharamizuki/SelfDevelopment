@@ -15,6 +15,10 @@ import common.Common;
 
 public class UserDao {
 
+	/*
+	 * login機能,ユーザー情報取得
+	 * login.java
+	 */
 	public UserDataBeans findLogin (String loginId, String password) {
 		List<UserDataBeans> userList = new ArrayList<UserDataBeans>();
 
@@ -57,6 +61,10 @@ public class UserDao {
         }
 		return null;
     }
+	/*
+	 * userIdからuser情報取得
+	 * userDataMaster.java,userDelete.java,userUpdataMaster.java
+	 */
 	public static UserDataBeans findData(int userId) {
 		Connection conn = null;
 		 List<UserDataBeans> userList = new ArrayList<UserDataBeans>();
@@ -97,6 +105,10 @@ public class UserDao {
 		}
 		return null;
 	}
+	/*
+	 * DB:userテーブルへ新規ユーザー情報の取得
+	 * userCreate.java
+	 */
 	public static void registrationUser(String loginId, String password, String password2, String name,
 			String birthDate, String address, String tel, String userType) {
 
@@ -130,6 +142,10 @@ public class UserDao {
 			}
 		}
     }
+	/*
+	 * 全user情報取得
+	 * userList.java
+	 */
 	public List<UserDataBeans> findAll() {
         Connection conn = null;
         List<UserDataBeans> userList = new ArrayList<UserDataBeans>();
@@ -172,8 +188,11 @@ public class UserDao {
         }
         return userList;
     }
-
-	public UserDataBeans userUpdata(String loginId ,String password ,String password2,String name,String birthDate,String address,String tel) {
+	/*
+	 * DB:userテーブル情報更新
+	 * userUpdata.java,userUpdataMaster.java
+	 */
+	public UserDataBeans userUpdata(String loginId ,String password ,String password2,String name,String birthDate,String address,String tel,String usertype) {
 		List<UserDataBeans> userUpdata = new ArrayList<UserDataBeans>();
 
 		Connection conn = null;
@@ -182,14 +201,15 @@ public class UserDao {
 		try {
 			conn = DBManager.getConnection();
 
-			st = conn.prepareStatement("UPDATE user SET name = ?,address = ?,tel = ?,birth_date = ?,login_pass = ? WHERE login_id = ?");
+			st = conn.prepareStatement("UPDATE user SET name = ?,address = ?,tel = ?,birth_date = ?,login_pass = ?,user_type = ? WHERE login_id = ?");
 
 			st.setString(1, name);
             st.setString(2, address);
             st.setString(3, tel);
             st.setString(4, birthDate);
             st.setString(5, Common.password(password));
-            st.setString(6, loginId);
+            st.setString(6, usertype);
+            st.setString(7, loginId);
             st.executeUpdate();
 
             st = conn.prepareStatement("SELECT * FROM user WHERE login_id = ?");
@@ -213,6 +233,10 @@ public class UserDao {
 		}
 		return null;
 	}
+	/*
+	 * DB:userテーブルからuser情報消去
+	 * userDelete.java
+	 */
 	 public static UserDataBeans deleteData(int id) {
 	        Connection conn = null;
 	        List<UserDataBeans> userList = new ArrayList<UserDataBeans>();
@@ -242,7 +266,10 @@ public class UserDao {
 	            }
 	        }
 	    }
-
+	 /*
+	  * loginId,userName,birthDate部分一致検索
+	  * userList.java
+	  */
 	 public ArrayList<UserDataBeans> findUser(String loginId, String userName, String birthDate1, String birthDate2){
 		 Connection conn = null;
 		 ArrayList<UserDataBeans> findUserData = new ArrayList<UserDataBeans>();

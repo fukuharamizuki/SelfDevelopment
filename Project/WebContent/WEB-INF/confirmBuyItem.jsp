@@ -80,7 +80,7 @@
 						<th>講師特別20％割引</th>
 						<th></th>
 						<th></th>
-						<th>-${idb.waribiki}円</th>
+						<th>-${resultBDB.waribiki}円</th>
 					</c:if>
 					</tr>
 					<tr align="center">

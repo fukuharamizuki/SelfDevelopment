@@ -31,10 +31,12 @@ public class itemData extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//選択itemIdの取得
 		int id = Integer.parseInt(request.getParameter("id"));
-		ItemDao itemData = new ItemDao();
-		ItemDataBeans idb = itemData.itemData(id);
-
+		ItemDao itemDao = new ItemDao();
+		//item情報取得
+		ItemDataBeans idb = itemDao.itemData(id);
+		//item情報セット
 		request.setAttribute("idb", idb);
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/itemData.jsp");
